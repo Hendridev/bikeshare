@@ -23,8 +23,8 @@ st.title("Dashboard Bike Sharing Dataset")
 
 # Filter Tahun dan Bulan
 st.sidebar.header("Filter Data")
-selected_years = st.sidebar.multiselect("Pilih Tahun", options=df['yr'].unique(), default=df['yr'].unique())
-selected_months = st.sidebar.multiselect("Pilih Bulan", options=df['mnth'].unique(), default=df['mnth'].unique())
+selected_years = st.sidebar.multiselect("Pilih Tahun", options=df['yr'].unique(), default=list(df['yr'].unique()))
+selected_months = st.sidebar.multiselect("Pilih Bulan", options=df['mnth'].unique(), default=list(df['mnth'].unique()))
 
 # Filter DataFrame
 filtered_df = df[(df['yr'].isin(selected_years)) & (df['mnth'].isin(selected_months))]
